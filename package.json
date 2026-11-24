@@ -1,0 +1,39 @@
+{
+  "name": "solana-freelancer-vault",
+  "version": "0.1.0",
+  "description": "Cofre de custódia (escrow) descentralizado para pagamentos de freelancers na Solana - Onchain Code #01",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-wallets": "^0.19.32",
+    "@solana/web3.js": "^1.95.3",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.3.3"
+  }
+}

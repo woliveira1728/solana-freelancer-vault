@@ -1,0 +1,13 @@
+# .gitignore
+.anchor
+.DS_Store
+target
+node_modules
+.next
+out
+build
+dist
+.env
+.env.local
+test-ledger
+**/*.rs.bk

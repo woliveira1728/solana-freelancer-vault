@@ -1,0 +1,19 @@
+[package]
+name = "freelancer-vault"
+version = "0.1.0"
+description = "Solana Freelancer Escrow Vault - Onchain Code #01"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "freelancer_vault"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { version = "0.30.1", features = ["init-if-needed"] }

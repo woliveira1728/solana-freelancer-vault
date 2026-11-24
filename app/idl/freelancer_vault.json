@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "freelancer_vault",
+  "instructions": [
+    {
+      "name": "initializeVault",
+      "accounts": [
+        { "name": "vault", "isMut": true, "isSigner": false },
+        { "name": "client", "isMut": true, "isSigner": true },
+        { "name": "freelancer", "isMut": false, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "amount", "type": "u64" }]
+    },
+    {
+      "name": "releasePayment",
+      "accounts": [
+        { "name": "vault", "isMut": true, "isSigner": false },
+        { "name": "freelancer", "isMut": true, "isSigner": false },
+        { "name": "client", "isMut": false, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "VaultAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "client", "type": "publicKey" },
+          { "name": "freelancer", "type": "publicKey" },
+          { "name": "amount", "type": "u64" },
+          { "name": "isReleased", "type": "bool" },
+          { "name": "bump", "type": "u8" }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    { "code": 6000, "name": "InvalidFreelancer", "msg": "A carteira informada não corresponde ao freelancer cadastrado no cofre." },
+    { "code": 6001, "name": "UnauthorizedClient", "msg": "Apenas o cliente pagador pode autorizar a liberação deste cofre." },
+    { "code": 6002, "name": "AlreadyReleased", "msg": "O pagamento deste cofre já foi liberado anteriormente." }
+  ]
+}
